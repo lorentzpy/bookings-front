@@ -1,0 +1,257 @@
+body {
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a.decolink {
+  text-decoration: underline;
+  color: #19a007;
+}
+
+a:hover.decolink {
+  text-decoration: none;
+  color: #19a007;
+  cursor: pointer;
+}
+
+.checkbox-opts {
+  font-size: small;
+}
+
+.calendar-container {
+  max-width: 1200px;  /* Ajuste la largeur */
+  margin: 20px auto;    /* Centre le calendrier */
+  border: 1px solid #ddd; /* Ajoute une bordure optionnelle */
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+}
+
+.options-container {
+  max-width: 1200px;
+  margin: 2px;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.fc-daygrid-event {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.fc-daygrid-body {
+  max-height: none !important;
+}
+
+.fc-daygrid-event {
+  position: absolute !important;
+  width: 100%;
+}
+
+/* Style des événements */
+.reservation-event {
+  background-color: #ff0000 !important;
+  border-width: medium;
+  border-color: rgb(114, 39, 39);
+  margin-bottom: 2px;
+  cursor: pointer;
+  top: 0px;
+  color: white !important;
+}
+
+/* .fc-sticky {
+  color: white !important;
+  color: inherit !important;
+} */
+
+.reservation-event-temp {
+  background-image: linear-gradient(45deg, #ff0000 25%, #ffffff 25%, #ffffff 50%, #ff0000 50%, #ff0000 75%, #ffffff 75%, #ffffff 100%);
+  background-size: 40.00px 40.00px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  top: 0px;
+}
+
+.reservation-event-temp .fc-event-title,
+.reservation-event-temp .fc-event-main {
+  background-color: white !important;
+}
+
+.reservation-event-temp a {
+  color: white !important;
+}
+
+.public-holiday {
+  background-color: #42f4aa !important;
+  /*margin-bottom: 2px;*/
+  top: 102px;
+
+}
+
+.zonea-event {
+  background-color: #f4a742 !important;
+  /*margin-bottom: 2px;*/
+  top: 27px;
+
+}
+
+.zoneb-event {
+  background-color: #34A853 !important;
+  /*margin-bottom: 2px;*/
+  top: 52px;
+}
+
+.zonec-event {
+  background-color: #3556ea !important;
+  /*margin-bottom: 2px;*/
+  top: 77px;
+}
+
+/* Navbar */
+.navbar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.navbar h1 {
+  color: #19a007;
+}
+
+.navbar .login {
+  margin-left: auto;
+}
+
+
+/*
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.navbar a:hover {
+  color: #f1356d;
+}*/
+
+.swal2-input {
+  height: 30px;
+  width: 200px;
+  font-size: 12px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.swal2-confirm {
+  font-size: 12px;
+}
+
+.swal2-cancel {
+  font-size: 12px;
+}
+
+.swal2-deny {
+  font-size: 12px;
+  margin-left: 30px;
+}
+
+.swal2-input-comment {
+   width: 300px;
+}
+
+.swal2-popup label {
+  font-size: 12px; /* Modifier la taille de la police */
+  font-weight: bold; /* Mettre les labels en gras */
+  margin-bottom: 5px; /* Ajouter de l'espace sous le label */
+  color: #333; /* Changer la couleur du texte */
+}
+
+.swal2-title {
+  font-size: 18px;
+}
+
+.swal2-html-container {
+  text-align: left !important; /* Forcer l'alignement à gauche */
+  width: 100%;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+/*login box*/
+
+.loginbox {
+  font-size: small;
+  text-align: right;
+}
+
+.extra-infos {
+  font-size: x-small;
+}
+
+form.change-password {
+  max-width: 400px;
+  margin: 0 auto;
+  /*font-family: sans-serif;*/
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+label.change-password {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input.change-password[type="password"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ✅ 2 colonnes */
+  gap: 8px;
+  align-items: center;
+  max-width: 600px;
+}
+
+.header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
