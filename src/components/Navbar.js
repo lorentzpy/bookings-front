@@ -1,5 +1,6 @@
 import { useAuth } from "../context/authContext";
 import showPwChangePopup from "../events/showPasswordChangePopup";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -7,7 +8,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <h1>Système réservation Chemin des Bridans</h1>
+            <h1>{process.env.REACT_APP_SITE_NAME}</h1>
             <div className="login">
                 { user ? (
                     <>
@@ -17,6 +18,7 @@ const Navbar = () => {
                             showPwChangePopup(user);
                         }}>Changer mon mot de passe</a>                   
                     <br /><a className="decolink" href="/#" onClick={logout}>Déconnexion</a>
+                    <br /><Link className="decolink" to="/admin">Administration des utilisateurs</Link>
                     </div>
                     </>
                 ) :

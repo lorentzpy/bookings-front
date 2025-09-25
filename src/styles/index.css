@@ -245,7 +245,7 @@ input.change-password[type="password"] {
 
 .table-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* ✅ 2 colonnes */
+  grid-template-columns: 1fr 1fr 1fr; /* ✅ 2 colonnes */
   gap: 8px;
   align-items: center;
   max-width: 600px;
