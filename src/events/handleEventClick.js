@@ -19,7 +19,8 @@ const handleEventClick = (info, commitBooking, calendarRef, refreshBlocked, chec
         created: extendedProps.created,
         createdBy: extendedProps.createdBy,
         modified: extendedProps.modified,
-        modifiedBy: extendedProps.modifiedBy
+        modifiedBy: extendedProps.modifiedBy,
+        billable: extendedProps.billable
     }
 
     eventInfos.end.setUTCDate(eventInfos.end.getUTCDate() - 1);

@@ -26,7 +26,7 @@ const showEventPopup = (eventInfos, commitBooking, calendarRef, refreshBlocked) 
         draggable: true,
         html: EventFormHtml({...eventInfos }),
         didOpen: () => {
-            handleSwalOpen(eventInfos.start, eventInfos.end, eventInfos.id);
+            handleSwalOpen(eventInfos.start, eventInfos.end, eventInfos.id, eventInfos.billable);
         },
         preConfirm: () => {
             const comment = document.getElementById("event-title")?.value;
@@ -40,18 +40,21 @@ const showEventPopup = (eventInfos, commitBooking, calendarRef, refreshBlocked) 
             
             const status = document.getElementById("event-status")?.value;
 
-            return { comment, startDate, endDate, status };
+            const billable = document.getElementById("event-billable").checked;
+
+            return { comment, startDate, endDate, status, billable };
         }
     }).then((result) => {
         if (result.isConfirmed) {
 
-            const { comment, startDate, endDate, status } = result.value;
+            const { comment, startDate, endDate, status, billable } = result.value;
 
             const payload = {
                 from: startDate.toISOString(),
                 to: endDate.toISOString(),
                 status: status,
-                comment: comment
+                comment: comment,
+                billable: billable
             }
 
             if (eventInfos.action === "edit" || eventInfos.action === "create") {

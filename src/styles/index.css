@@ -77,6 +77,11 @@ a:hover.decolink {
   color: white !important;
 }
 
+.facturable .fc-event-title::before {
+  content: "💰";
+  margin-right: 4px;
+}
+
 /* .fc-sticky {
   color: white !important;
   color: inherit !important;

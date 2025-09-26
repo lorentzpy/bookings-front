@@ -3,7 +3,11 @@ import dayjs from "dayjs";
 const EventFormHtml = ({...eventInfos}) => {
 
     let extraInfos = "";
-    if (eventInfos.action === "edit") {
+    let billable = true;
+    if (eventInfos.action === "edit") {        
+        if (!eventInfos.billable) {
+          billable = false;
+        }
         extraInfos = `
             <div class="extra-infos">
             <p>Création le ${dayjs(eventInfos.created).format("YYYY-MM-DD / HH:mm")} par ${eventInfos.createdBy["username"]}<br>
@@ -35,6 +39,10 @@ const EventFormHtml = ({...eventInfos}) => {
         <option value="confirmed" ${eventInfos.status === "confirmed" ? "selected" : ""}>Confirmé</option>
         <option value="pending" ${eventInfos.status === "pending" ? "selected" : ""}>En attente</option>
       </select>
+    </p>
+    <p>
+      <label for="event-billable" class="swal2-popup">Facturable</label>
+      <input type="checkbox" id="event-billable" ${billable ? "checked" : ""} />
     </p>
     ${extraInfos}
   `;

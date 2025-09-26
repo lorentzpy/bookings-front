@@ -23,23 +23,24 @@ const bookingsSource = ( currentMonth ) => {
             const end = new Date(rawEnd);
             end.setUTCDate(end.getUTCDate() + 1);
     
-            return {
-                id: event._id,
-                title: event.comment,
-                start: new Date(event.from),
-                end,
-                status: event.status,
-                created: event.created,
-                createdBy: event.createdBy,
-                modified: event.modified,
-                modifiedBy: event.modifiedBy,
-                className:
-                event.status === "pending"
-                    ? "reservation-event-temp"
-                    : "reservation-event",
-                editable: false,
-                clickable: true,
-            };
+                return {
+                    id: event._id,
+                    title: event.comment,
+                    start: new Date(event.from),
+                    end,
+                    status: event.status,
+                    created: event.created,
+                    createdBy: event.createdBy,
+                    modified: event.modified,
+                    modifiedBy: event.modifiedBy,
+                    className: [
+                        event.status === "pending" ? "reservation-event-temp" : "reservation-event",
+                        event.billable ? "facturable" : ""
+                    ],
+                    editable: false,
+                    clickable: true,
+                    billable: event.billable
+                };
             });
     
             successCallback(transformed);
