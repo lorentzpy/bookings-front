@@ -74,6 +74,9 @@ a:hover.decolink {
   margin-bottom: 2px;
   cursor: pointer;
   top: 0px;
+}
+
+.reservation-event .fc-event-title {
   color: white !important;
 }
 
